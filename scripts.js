@@ -3,7 +3,8 @@ let nextPlayer = 'X'; // takes a value of either 'X' or 'O' according to the gam
 //initialize the game
  
 // use the value stored in the nextPlayer variable to indicate who the next player is
-
+player =document.getElementById('next-lbl');
+player.innerText = nextPlayer;
 
 //This call will create the buttons needed for the gameboard.
 createGameBoard()
@@ -34,9 +35,13 @@ function takeCell(event)
    event.target.innerText = nextPlayer;
     if(nextPlayer==='X'){
         nextPlayer = 'O';
+        player = document.getElementById('next-lbl');
+        player.innerText = nextPlayer;
 
     }else if(nextPlayer ==='O'){
         nextPlayer ='X';
+        player = document.getElementById('next-lbl');
+        player.innerText = nextPlayer;
     }
     event.target.disabled = 'disabled';
     // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
